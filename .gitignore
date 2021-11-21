@@ -17,3 +17,4 @@ local.properties
 
 # should this be committed?
 /app/credentials.json
+google-services.json
