@@ -30,7 +30,7 @@ class WeatherFragment : Fragment() {
         _binding = FragmentWeatherBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textNotifications
+        val textView: TextView = binding.textWeather
         weatherViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })

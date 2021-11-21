@@ -22,4 +22,11 @@
         android:name="com.gustavodmcarlos.finances.ui.weather.WeatherFragment"
         android:label="@string/title_weather"
         tools:layout="@layout/fragment_weather" />
+
+    <fragment
+        android:id="@+id/navigation_map"
+        android:name="com.gustavodmcarlos.finances.ui.map.MapFragment"
+        android:label="@string/title_map"
+        tools:layout="@layout/fragment_map" />
+
 </navigation>
