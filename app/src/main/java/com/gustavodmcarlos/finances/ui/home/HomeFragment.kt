@@ -10,6 +10,8 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.gustavodmcarlos.finances.R
 import com.gustavodmcarlos.finances.databinding.FragmentHomeBinding
+import com.gustavodmcarlos.finances.ui.Transaction
+import com.gustavodmcarlos.finances.ui.TransactionInfo
 
 class HomeFragment : Fragment() {
 
@@ -31,10 +33,21 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
+        val transactions = arrayOf(
+            TransactionInfo(R.drawable.ic_baseline_file_copy_24, "Getbox Plan", "Subscription", "18 Sept 2020", -144.00),
+            TransactionInfo(R.drawable.ic_baseline_music_note_24, "Spotipay", "Subscription", "12 Sept 2020", -24.00),
+            TransactionInfo(R.drawable.ic_baseline_play_arrow_24, "Mytube Ads", "Income", "10 Sept 2020", 32.00),
+            TransactionInfo(R.drawable.ic_round_cases_24, "Freelance Work", "Income", "06 Sept 2020", 4.21)
+        )
+
+        if (container != null) {
+            for (tInfo in transactions) {
+                val t = Transaction(container?.context)
+                t.load(tInfo)
+                binding.transactionList.addView(t)
+            }
+        }
+
         return root
     }
 
