@@ -1,35 +1,20 @@
 package com.gustavodmcarlos.finances.ui.login
 
-import android.app.Activity
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
-import android.os.Bundle
-import androidx.annotation.StringRes
-import androidx.appcompat.app.AppCompatActivity
-import android.text.Editable
-import android.text.TextWatcher
-import android.view.View
-import android.view.inputmethod.EditorInfo
-import android.widget.EditText
-import android.widget.Toast
-import com.google.android.gms.auth.api.signin.GoogleSignIn
-import com.gustavodmcarlos.finances.databinding.ActivityLoginBinding
-
-import com.gustavodmcarlos.finances.R
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions
-import androidx.core.app.ActivityCompat.startActivityForResult
-
+import android.content.Context
 import android.content.Intent
+import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
-import com.google.android.gms.tasks.Task
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
+import com.google.android.gms.tasks.Task
 import com.gustavodmcarlos.finances.MainActivity
-
-import com.google.android.gms.auth.api.signin.GoogleSignInResult
-
-
-
+import com.gustavodmcarlos.finances.R
+import com.gustavodmcarlos.finances.databinding.ActivityLoginBinding
 
 const val RC_SIGN_IN = 1
 const val FORCE_SIGN_IN = false
@@ -66,14 +51,6 @@ class LoginActivity : AppCompatActivity() {
         if (!FORCE_SIGN_IN && account != null) {
             Log.d(TAG, "user previously logged in")
             updateUI(account)
-            // user is logged in
-            // TODO: Use this attributes
-//            val displayName = account.displayName
-//            val givenName = account.givenName
-//            val familyName = account.familyName
-//            val email = account.email
-//            val id = account.id
-//            val photoUrl = account.photoUrl
         } else {
             Log.d(TAG, "user not previously logged in")
         }
@@ -106,18 +83,29 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    private fun updateUI(model: GoogleSignInAccount) {
+    private fun updateUI(account: GoogleSignInAccount) {
         val welcome = getString(R.string.welcome)
-        val displayName = model.displayName
+
+        val sharedPref = getSharedPreferences("userInfo", Context.MODE_PRIVATE)
+        with (sharedPref.edit()) {
+            putString("displayName", account.displayName)
+            putString("givenName", account.givenName)
+            putString("email", account.email)
+            putString("photoUrl", account.photoUrl.toString())
+            apply()
+        }
+
+        val displayName = account.displayName
+
         Toast.makeText(
             applicationContext,
             "$welcome $displayName",
             Toast.LENGTH_LONG
         ).show()
-        gotoToMainActivity()
+        gotoToMainActivity(account)
     }
 
-    private fun gotoToMainActivity() {
+    private fun gotoToMainActivity(model: GoogleSignInAccount) {
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
     }
