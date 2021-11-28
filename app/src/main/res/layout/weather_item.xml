@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="100dp">
+    <!--    android:layout_height="wrap_content"-->
+
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:text="22/10/2021 18:00:00"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+        app:layout_constraintStart_toStartOf="@+id/temperatureText" />
+
+    <TextView
+        android:id="@+id/temperatureText"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:text="Temperature"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/precipitationText"
+        app:layout_constraintStart_toStartOf="@+id/precipitationText"
+        app:layout_constraintTop_toBottomOf="@+id/date" />
+
+    <TextView
+        android:id="@+id/temperatureValue"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:text="30ºC"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/precipitationValue"
+        app:layout_constraintEnd_toEndOf="@+id/precipitationValue"
+        app:layout_constraintTop_toTopOf="@+id/guideline4" />
+
+    <TextView
+        android:id="@+id/precipitationText"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:text="Precipitation"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/windText"
+        app:layout_constraintStart_toStartOf="@+id/windText"
+        app:layout_constraintTop_toBottomOf="@+id/temperatureText" />
+
+    <TextView
+        android:id="@+id/precipitationValue"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:text="20%"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/windValue"
+        app:layout_constraintEnd_toEndOf="@+id/windValue"
+        app:layout_constraintTop_toBottomOf="@+id/temperatureValue" />
+
+    <TextView
+        android:id="@+id/windText"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:text="Wind Text"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/humidityText"
+        app:layout_constraintStart_toStartOf="@+id/humidityText"
+        app:layout_constraintTop_toBottomOf="@+id/precipitationText" />
+
+    <TextView
+        android:id="@+id/windValue"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:text="4.8 km/h"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/humidityValue"
+        app:layout_constraintEnd_toEndOf="@+id/humidityValue"
+        app:layout_constraintTop_toBottomOf="@+id/precipitationValue" />
+
+    <TextView
+        android:id="@+id/humidityText"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:text="Humidity"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/windText" />
+
+    <TextView
+        android:id="@+id/humidityValue"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_marginEnd="16dp"
+        android:text="80%"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/windValue" />
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:src="@drawable/ic_baseline_music_note_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/precipitationText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.324" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="159dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="38dp" />
+
+    <TextView
+        android:id="@+id/descriptionWeather"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="sunny"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/icon" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
