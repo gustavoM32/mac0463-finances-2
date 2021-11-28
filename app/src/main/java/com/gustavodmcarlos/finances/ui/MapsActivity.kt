@@ -28,6 +28,7 @@ import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.CameraUpdate
 
 import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
 
 class MapsActivity : AppCompatActivity(), OnMyLocationButtonClickListener,
     OnMyLocationClickListener, OnMapReadyCallback, OnRequestPermissionsResultCallback {
@@ -80,10 +81,22 @@ class MapsActivity : AppCompatActivity(), OnMyLocationButtonClickListener,
                 }
             }
 
+        map.uiSettings.isZoomControlsEnabled = true
+
         // Add a marker in Sydney and move the camera
-//        val sydney = LatLng(-34.0, 151.0)
-//        mMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
-//        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+        val markers = arrayOf(
+            LatLng(-23.560562235563197, -46.7352438847067),
+            LatLng(-23.574615570563306, -46.74159643917088),
+            LatLng(-23.57377272370772, -46.73238263020013),
+            LatLng(-23.55960643017709, -46.72072092050419),
+            LatLng(-23.563597201645106, -46.725690356654745),
+        )
+
+        for (m in markers) {
+            map.addMarker(MarkerOptions().position(m))
+        }
+
+        map.moveCamera(CameraUpdateFactory.newLatLng(markers[4]))
     }
 
     /**
