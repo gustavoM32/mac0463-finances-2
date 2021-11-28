@@ -21,6 +21,8 @@
         <entry key="app/src/main/res/layout/fragment_weather.xml" value="0.26222826086956524" />
         <entry key="app/src/main/res/layout/transaction.xml" value="0.33" />
         <entry key="app/src/main/res/layout/transactionOld.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/layout/transaction_old.xml" value="0.19791666666666666" />
+        <entry key="app/src/main/res/layout/weather_item.xml" value="0.5" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.35572916666666665" />
       </map>
     </option>
