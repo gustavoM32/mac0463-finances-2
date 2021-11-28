@@ -10,12 +10,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.gustavodmcarlos.finances.databinding.ActivityMainBinding
 import android.view.Menu
-
-import android.view.MenuInflater
 import android.view.MenuItem
-import android.widget.Toast
-import com.gustavodmcarlos.finances.ui.login.RC_SIGN_IN
-
 
 class MainActivity : AppCompatActivity() {
 

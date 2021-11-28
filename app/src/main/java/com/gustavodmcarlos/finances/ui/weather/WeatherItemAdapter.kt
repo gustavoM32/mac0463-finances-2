@@ -1,7 +1,6 @@
 package com.gustavodmcarlos.finances.ui.weather
 
 import android.content.Context
-
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,8 +9,6 @@ import com.bumptech.glide.Glide
 import com.gustavodmcarlos.finances.databinding.WeatherItemBinding
 import java.text.SimpleDateFormat
 import java.util.*
-import kotlin.collections.ArrayList
-import kotlin.math.abs
 
 class WeatherItemAdapter(context: Context, item: ArrayList<WeatherItem>) :
     ArrayAdapter<WeatherItem?>(context, 0, item as List<WeatherItem?>) {

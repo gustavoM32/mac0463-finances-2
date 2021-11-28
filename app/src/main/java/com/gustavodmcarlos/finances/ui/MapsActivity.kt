@@ -9,7 +9,6 @@ import android.location.Location
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat.OnRequestPermissionsResultCallback
 import androidx.core.content.ContextCompat
@@ -26,8 +25,6 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.gustavodmcarlos.finances.R
 import com.gustavodmcarlos.finances.databinding.ActivityMapsBinding
 import com.google.android.gms.maps.CameraUpdateFactory
-
-import com.google.android.gms.maps.CameraUpdate
 
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions

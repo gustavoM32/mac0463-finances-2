@@ -7,14 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
-import android.widget.ImageView
-import com.gustavodmcarlos.finances.R
 import com.gustavodmcarlos.finances.databinding.TransactionBinding
 import kotlin.math.abs
-
-
-
-
 
 class TransactionsAdapter(context: Context, transactions: Array<Transaction>) :
     ArrayAdapter<Transaction?>(context, 0, transactions) {
