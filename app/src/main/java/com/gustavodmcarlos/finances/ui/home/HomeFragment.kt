@@ -57,14 +57,6 @@ class HomeFragment : Fragment() {
         val listView = binding.transactionList
         listView.adapter = adapter
 
-//        if (container != null) {
-//            for (tInfo in transactions) {
-//                val t = TransactionOld(container?.context)
-//                t.load(tInfo)
-//                binding.transactionList.addView(t)
-//            }
-//        }
-
         return root
     }
 
