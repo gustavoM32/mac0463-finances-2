@@ -6,96 +6,148 @@
     android:layout_height="match_parent"
     tools:context=".ui.statistics.StatisticsFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/earnedBox"
-        android:layout_width="159dp"
-        android:layout_height="78dp"
-        android:layout_marginTop="48dp"
-        app:layout_constraintEnd_toStartOf="@+id/spentBox"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-77dp">
 
-        <TextView
-            android:id="@+id/earnedValue"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="$302.00"
-            android:textColor="#03AD12"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/earnedImage"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="$302.00" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/earnedText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Earned"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:text="Earned" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/earnedBox"
+                android:layout_width="159dp"
+                android:layout_height="78dp"
+                android:layout_marginTop="24dp"
+                app:layout_constraintEnd_toStartOf="@+id/spentBox"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/earnedImage"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:src="@drawable/ic_baseline_arrow_circle_up_24"
-            app:layout_constraintEnd_toStartOf="@+id/earnedValue"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/earnedValue"
-            app:tint="#03AD12" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                <TextView
+                    android:id="@+id/earnedValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$302.00"
+                    android:textColor="#03AD12"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/earnedImage"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="$302.00" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/spentBox"
-        android:layout_width="159dp"
-        android:layout_height="78dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/earnedBox"
-        app:layout_constraintTop_toTopOf="@+id/earnedBox">
+                <TextView
+                    android:id="@+id/earnedText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Earned"
+                    android:textSize="24sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:text="Earned" />
 
-        <TextView
-            android:id="@+id/spentText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Spent"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:text="Spent" />
+                <ImageView
+                    android:id="@+id/earnedImage"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/ic_baseline_arrow_circle_up_24"
+                    app:layout_constraintEnd_toStartOf="@+id/earnedValue"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/earnedValue"
+                    app:tint="#03AD12" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <ImageView
-            android:id="@+id/spentImage"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:src="@drawable/ic_baseline_arrow_circle_down_24"
-            app:layout_constraintEnd_toStartOf="@+id/spentValue"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:tint="#de0d0d" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/spentBox"
+                android:layout_width="159dp"
+                android:layout_height="78dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/earnedBox"
+                app:layout_constraintTop_toTopOf="@+id/earnedBox">
 
-        <TextView
-            android:id="@+id/spentValue"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="$140.00"
-            android:textColor="#de0d0d"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/spentImage"
-            app:layout_constraintTop_toTopOf="@+id/spentImage"
-            tools:text="$140.00" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                <TextView
+                    android:id="@+id/spentText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Spent"
+                    android:textSize="24sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:text="Spent" />
+
+                <ImageView
+                    android:id="@+id/spentImage"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/ic_baseline_arrow_circle_down_24"
+                    app:layout_constraintEnd_toStartOf="@+id/spentValue"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="#de0d0d" />
+
+                <TextView
+                    android:id="@+id/spentValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$140.00"
+                    android:textColor="#de0d0d"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/spentImage"
+                    app:layout_constraintTop_toTopOf="@+id/spentImage"
+                    tools:text="$140.00" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <ImageView
+                android:id="@+id/barChart"
+                android:layout_width="match_parent"
+                android:layout_height="205dp"
+                android:layout_marginTop="12dp"
+                android:src="@drawable/ic_round_bar_chart_24"
+                app:layout_constraintTop_toBottomOf="@+id/pieChart"
+                tools:layout_editor_absoluteX="16dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="103dp" />
+
+            <ImageView
+                android:id="@+id/pieChart"
+                android:layout_width="match_parent"
+                android:layout_height="205dp"
+                android:layout_marginTop="12dp"
+                android:scaleX="1.5"
+                android:scaleY="1.5"
+                android:src="@drawable/ic_round_bar_chart_24"
+                app:layout_constraintTop_toTopOf="@+id/guideline3"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <Button
+                android:id="@+id/open_map_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="View Map"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/barChart" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
