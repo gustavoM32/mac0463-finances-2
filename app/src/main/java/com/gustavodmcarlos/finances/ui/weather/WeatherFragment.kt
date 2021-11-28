@@ -3,38 +3,31 @@ package com.gustavodmcarlos.finances.ui.weather
 import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Context.MODE_PRIVATE
+import android.content.pm.PackageManager
+import android.location.Location
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.location.LocationServices
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
+import com.gustavodmcarlos.finances.PermissionUtils
 import com.gustavodmcarlos.finances.databinding.FragmentWeatherBinding
 import com.gustavodmcarlos.finances.ui.NetworkUtils
 import com.gustavodmcarlos.finances.ui.weather.data.OpenWeather
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
-
-import android.content.Context.MODE_PRIVATE
-import android.content.pm.PackageManager
-import android.location.Location
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
-import com.google.android.gms.location.FusedLocationProviderClient
-import com.google.android.gms.location.LocationServices
-import com.gustavodmcarlos.finances.PermissionUtils
-import com.gustavodmcarlos.finances.ui.MapsActivity
-
 import java.lang.reflect.Type
-import android.location.LocationManager
-import androidx.constraintlayout.motion.widget.Debug.getLocation
-
-import androidx.core.content.ContextCompat.getSystemService
-import android.widget.Toast
 
 
 
@@ -74,7 +67,7 @@ class WeatherFragment : Fragment() {
 
         // get weather data
         val weatherInfo = loadData()
-        updateUI(weatherInfo!!)
+        updateUI(weatherInfo)
 
         enableMyLocation()
 
@@ -82,7 +75,6 @@ class WeatherFragment : Fragment() {
             .addOnSuccessListener { location : Location? ->
                 // Got last known location. In some rare situations this can be null.
                 Log.d(TAG, "Teste location")
-                // Got last known location. In some rare situations this can be null.
                 if (location == null) {
                     Toast.makeText(context, "Unable to find location.", Toast.LENGTH_SHORT).show()
                     Log.e(TAG, "location is null")
@@ -172,12 +164,15 @@ class WeatherFragment : Fragment() {
         updateUI(weatherData)
     }
 
-    fun updateUI(weatherInfo : WeatherInfo) {
-        val weatherItems = arrayListOf<WeatherItem>()
+    fun updateUI(weatherInfo : WeatherInfo?) {
+        if (weatherInfo == null) {
+            return
+        }
 
         if (weatherInfo.lastCity == null) {
             return
         }
+        val weatherItems = arrayListOf<WeatherItem>()
 
         val city = weatherInfo.cities[weatherInfo.lastCity]
         val cityName = city?.cityName

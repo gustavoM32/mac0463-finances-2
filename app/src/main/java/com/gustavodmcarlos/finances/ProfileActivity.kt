@@ -7,6 +7,9 @@ import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.gustavodmcarlos.finances.databinding.ActivityProfileBinding
 
+
+
+
 class ProfileActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityProfileBinding

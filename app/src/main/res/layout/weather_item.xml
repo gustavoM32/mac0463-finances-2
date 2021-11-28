@@ -61,7 +61,7 @@
         android:id="@+id/windText"
         android:layout_width="wrap_content"
         android:layout_height="25dp"
-        android:text="Wind Text"
+        android:text="Wind Speed"
         android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/humidityText"
         app:layout_constraintStart_toStartOf="@+id/humidityText"
