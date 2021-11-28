@@ -57,7 +57,6 @@ class WeatherFragment : Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
-//    private val weatherData: OpenWeather? = null TODO delete line
 
     @SuppressLint("MissingPermission")
     override fun onCreateView(

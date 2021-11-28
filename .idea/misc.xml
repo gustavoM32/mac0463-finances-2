@@ -10,20 +10,32 @@
         <entry key="app/src/main/res/drawable/ic_logo_background.xml" value="0.3131578947368421" />
         <entry key="app/src/main/res/layout-w1240dp/activity_login.xml" value="0.2203125" />
         <entry key="app/src/main/res/layout-w936dp/activity_login.xml" value="0.19262295081967212" />
+        <entry key="app/src/main/res/layout/activity_dummy.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.26902173913043476" />
         <entry key="app/src/main/res/layout/activity_maps.xml" value="0.24864130434782608" />
+        <entry key="app/src/main/res/layout/activity_profile.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/app_bar_dummy.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/layout/content_dummy.xml" value="0.340625" />
         <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.26222826086956524" />
+        <entry key="app/src/main/res/layout/fragment_gallery.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.22" />
         <entry key="app/src/main/res/layout/fragment_map.xml" value="0.19427083333333334" />
+        <entry key="app/src/main/res/layout/fragment_slideshow.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/fragment_statistics.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_transaction.xml" value="0.3958333333333333" />
         <entry key="app/src/main/res/layout/fragment_weather.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/nav_header_dummy.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/layout/settings_activity.xml" value="0.33" />
         <entry key="app/src/main/res/layout/transaction.xml" value="0.33" />
         <entry key="app/src/main/res/layout/transactionOld.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/transaction_old.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/layout/weather_item.xml" value="0.5" />
+        <entry key="app/src/main/res/menu/action_bar.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/menu/activity_main_drawer.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/menu/dummy.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/menu/navigation_menu.xml" value="0.35572916666666665" />
       </map>
     </option>
   </component>

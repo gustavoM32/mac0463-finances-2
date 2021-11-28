@@ -1,5 +1,6 @@
 package com.gustavodmcarlos.finances
 
+import android.content.Intent
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
@@ -8,6 +9,13 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.gustavodmcarlos.finances.databinding.ActivityMainBinding
+import android.view.Menu
+
+import android.view.MenuInflater
+import android.view.MenuItem
+import android.widget.Toast
+import com.gustavodmcarlos.finances.ui.login.RC_SIGN_IN
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -31,5 +39,22 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val inflater = menuInflater
+        inflater.inflate(R.menu.action_bar, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.action_profile -> {
+                val intent = Intent(this, ProfileActivity::class.java)
+                startActivity(intent)
+            }
+            else -> {}
+        }
+        return true
     }
 }
