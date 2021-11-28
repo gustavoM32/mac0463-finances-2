@@ -7,8 +7,8 @@
     tools:context=".ui.home.HomeFragment">
 
     <ScrollView
-        android:layout_width="408dp"
-        android:layout_height="813dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -23,16 +23,23 @@
                 android:id="@+id/homeTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="20dp"
                 android:layout_weight="1"
                 android:text="Hello, user!"
                 android:textColor="#000000"
                 android:textSize="34sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <HorizontalScrollView
+                android:id="@+id/horizontalScrollView"
                 android:layout_width="wrap_content"
-                android:layout_height="254dp">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/homeTitle">
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -44,8 +51,8 @@
                         android:layout_width="360dp"
                         android:layout_height="194dp"
                         android:layout_marginLeft="18dp"
-                        android:layout_marginTop="36dp"
                         android:layout_marginRight="18dp"
+                        android:layout_marginBottom="4dp"
                         android:background="@drawable/cardbackground_world"
                         app:cardName="Gustavo M Carlos"
                         app:cardNameTextColor="#cccccc"
@@ -67,8 +74,8 @@
                         android:layout_width="360dp"
                         android:layout_height="195dp"
                         android:layout_marginLeft="18dp"
-                        android:layout_marginTop="36dp"
                         android:layout_marginRight="18dp"
+                        android:layout_marginBottom="4dp"
                         android:background="@drawable/cardbackground_world"
                         app:cardName="Gustavo M Carlos"
                         app:cardNameTextColor="#cccccc"
@@ -92,23 +99,29 @@
                 android:id="@+id/transactionsTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp"
+                android:layout_marginTop="12dp"
                 android:layout_weight="1"
                 android:text="Transactions"
                 android:textColor="#000000"
                 android:textSize="24sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
 
-            <LinearLayout
+
+            <!-- TODO: the layout_marginBottom is a workaround, I don't know why the last item is not showing -->
+            <com.gustavodmcarlos.finances.ui.NonScrollListView
                 android:id="@+id/transactionList"
-                android:layout_width="300dp"
-                android:layout_height="524dp"
-                android:layout_gravity="center"
-                android:orientation="vertical"></LinearLayout>
-
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="64dp"
+                android:layout_weight="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/transactionsTitle" />
         </LinearLayout>
     </ScrollView>
 
-    <!--        app:brandLogo="@drawable/brandlogo"-->
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -18,7 +18,7 @@ import com.gustavodmcarlos.finances.R
 import com.gustavodmcarlos.finances.databinding.ActivityLoginBinding
 
 const val RC_SIGN_IN = 1
-const val FORCE_SIGN_IN = true
+const val FORCE_SIGN_IN = false
 private const val TAG = "LoginActivity"
 
 class LoginActivity : AppCompatActivity() {
