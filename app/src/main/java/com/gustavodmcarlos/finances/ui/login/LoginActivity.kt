@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -17,7 +18,7 @@ import com.gustavodmcarlos.finances.R
 import com.gustavodmcarlos.finances.databinding.ActivityLoginBinding
 
 const val RC_SIGN_IN = 1
-const val FORCE_SIGN_IN = false
+const val FORCE_SIGN_IN = true
 private const val TAG = "LoginActivity"
 
 class LoginActivity : AppCompatActivity() {
@@ -27,9 +28,15 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        this.title = "Login"
 
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        // load app logo image
+        Glide.with(this)
+            .load("https://cdn.pixabay.com/photo/2018/10/03/11/31/wallet-3721156_960_720.png")
+            .into(binding.appLogo)
 
         val login = binding.signInButton
 
